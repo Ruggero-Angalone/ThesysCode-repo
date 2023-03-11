@@ -16,3 +16,8 @@
   - TextLineOriginal="#All values writtten as @<name>@ are made to be changed with a sed command"   <- Comment line that gets changed in the gen file by sed
   - FilePrototype="${FclPath}GEN_prototype.fcl"                                                     <- Name of the prototype of the gen.fcl file missing the energy; the energy is inserted with "sed "s|@NEvents@|$EventNumber|g;s|@Energy@|$E|g;s|$TextLineOriginal|$TextLineSubstitute|g;" $FilePrototype > "fcl/${GenName}"
   - PnfsPath="pnfs/users/${UserName}/Output/"                                                        <- Path in which the .root files are moved after the process; the ana.root file is copied
+                                                                                                        
+- TreeComplete.cxx launches the whole analysis using TotalTreeComplete()
+- EasyTree.cpp is used to plot and save simple graphs without passing throug root GUI.
+- ParametersFilePlot.cxx was used to analyze the parameters as obtained by the various interpolation
+- TreeAddFunction.cxx adds to a tree a function object; useful for interpolations and similar 
